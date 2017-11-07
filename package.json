@@ -1,0 +1,29 @@
+{
+  "name": "node-amp-custom",
+  "version": "0.1.0",
+  "author": "kmrk",
+  "license": "MIT",
+  "description": "Optimize CSS source for AMP HTML.",
+  "keywords": [
+    "css",
+    "AMP",
+    "AMP HTML",
+    "Accelerated Mobile Pages"
+  ],
+  "homepage": "https://github.com/kmrk/node-amp-custom",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kmrk/node-amp-custom"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "test:module": "node test/module-test.js",
+    "test:method": "node test/method-test.js"
+  },
+  "dependencies": {
+    "uglifycss": "0.0.27"
+  }
+}
