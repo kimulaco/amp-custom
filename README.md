@@ -4,7 +4,7 @@ Optimize CSS source for AMP HTML.
 
 ## Install
 ~~~
-npm install amp-custom
+npm install --save amp-custom
 ~~~
 
 ## Use
