@@ -1,5 +1,5 @@
 const fs = require('fs');
-const ampCustom = require('../index.js');
+const ampCustom = require('amp-custom');
 
 fs.readFile('./test/css/module-test-before.css', (error, data) => {
     if (error) {

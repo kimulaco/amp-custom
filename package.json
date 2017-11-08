@@ -1,5 +1,5 @@
 {
-  "name": "node-amp-custom",
+  "name": "amp-custom",
   "version": "0.1.0",
   "author": "kmrk",
   "license": "MIT",
@@ -10,10 +10,10 @@
     "AMP HTML",
     "Accelerated Mobile Pages"
   ],
-  "homepage": "https://github.com/kmrk/node-amp-custom",
+  "homepage": "https://github.com/kmrk/amp-custom",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kmrk/node-amp-custom"
+    "url": "https://github.com/kmrk/amp-custom"
   },
   "main": "index.js",
   "engines": {
