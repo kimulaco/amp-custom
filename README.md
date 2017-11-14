@@ -67,7 +67,3 @@ console.log(ampCustom.isOverMaxByte(cssSource)); // false
 
 ## License
 [MIT License](https://github.com/kmrk/amp-custom/blob/master/LICENSE).
-
-## TODO
-- @document
-- @supports

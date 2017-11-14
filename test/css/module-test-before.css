@@ -22,3 +22,12 @@ a {
   min-width: 640px;
   max-width: 800px;
 }
+
+@supports not (display: flex) {
+  .flexbox {
+    overflow: hidden;
+  }
+  .flexbox div {
+    float: left;
+  }
+}

@@ -9,6 +9,8 @@ let AmpCustom = function () {
         /@namespace (.+?);/g,
         /@viewport ([\s\S]*?)}/gm,
         /@page ([\s\S]*?)}/gm,
+        /@document(.+?)\{(?:[^{}]*\{[^{}]*\})*[^{}]*\}/gm,
+        /@supports(.+?)\{(?:[^{}]*\{[^{}]*\})*[^{}]*\}/gm,
         /!important/g
     ];
     this.option = {
