@@ -3,22 +3,47 @@ const uglifycss = require('uglifycss');
 let AmpCustom = function () {
     this.MAX_BYTE = 50000;
     this.ENCODE = 'utf-8';
-    this.removeStyleArr = [
-        /@charset (.+?);/g,
-        /@import (.+?);/g,
-        /@namespace (.+?);/g,
-        /@viewport ([\s\S]*?)}/gm,
-        /@page ([\s\S]*?)}/gm,
-        /@document(.+?)\{(?:[^{}]*\{[^{}]*\})*[^{}]*\}/gm,
-        /@supports(.+?)\{(?:[^{}]*\{[^{}]*\})*[^{}]*\}/gm,
-        /!important/g
+    this.removeStyleRegExp = [
+        /(\r?\n|)@charset (.+?);(\r?\n|)/g,
+        /(\r?\n|)@import (.+?);(\r?\n|)/g,
+        /(\r?\n|)@namespace (.+?);(\r?\n|)/g,
+        /(\r?\n|)@viewport ([\s\S]*?)}(\r?\n|)/gm,
+        /(\r?\n|)@page ([\s\S]*?)}(\r?\n|)/gm,
+        /(\r?\n|)@document(.+?)\{(?:[^{}]*\{[^{}]*\})*[^{}]*\}(\r?\n|)/gm,
+        /(\r?\n|)@supports(.+?)\{(?:[^{}]*\{[^{}]*\})*[^{}]*\}(\r?\n|)/gm,
+        /(| )!important(\r?\n|)/g
     ];
-    this.option = {
+    this.optimizeOption = {
         minify: true
     };
 };
 
 AmpCustom.prototype = {
+    /**
+     * optimize
+     * @param {string} cssSource - CSS source you want to optimize.
+     * @param {object} option - Option to optimize CSS source.
+     * @param {boolean} option.minify - Whether to compress the CSS source.
+     * @return {boolean} - Optimized CSS source.
+     */
+    optimize: function (cssSource, option) {
+        if (typeof cssSource !== 'string') {
+            return cssSource;
+        }
+
+        option = Object.assign({}, this.optimizeOption, option || {});
+
+        this.removeStyleRegExp.forEach((selfRegExp) => {
+            cssSource = cssSource.replace(selfRegExp, '');
+        });
+
+        if (option.minify) {
+            cssSource = uglifycss.processString(cssSource, {});
+        }
+
+        return cssSource;
+    },
+
     /**
      * getSize
      * @param {string} cssSource - CSS source you want to measure.
@@ -49,50 +74,6 @@ AmpCustom.prototype = {
         }
 
         return false;
-    },
-
-    /**
-     * optimize
-     * @param {string} cssSource - CSS source you want to optimize.
-     * @param {object} option - Option to optimize CSS source.
-     * @param {boolean} option.minify - Whether to compress the CSS source.
-     * @return {boolean} - Optimized CSS source.
-     */
-    optimize: function (cssSource, option) {
-        if (typeof cssSource !== 'string') {
-            return cssSource;
-        }
-
-        option = Object.assign({}, this.option, option || {});
-        cssSource = this._removeInvalidStyle(cssSource);
-
-        if (option.minify) {
-            cssSource = this._minifyStyle(cssSource);
-        }
-
-        return cssSource;
-    },
-
-    /**
-     * _minifyStyle
-     * @param {string} cssSource - CSS source to compress
-     * @return {string} - Compressed CSS source
-     */
-    _minifyStyle: function (cssSource) {
-        return uglifycss.processString(cssSource, {});
-    },
-
-    /**
-     * _removeInvalidStyle
-     * @param {string} cssSource - CSS source you want to optimize.
-     * @return {string} - Optimized CSS source.
-     */
-    _removeInvalidStyle: function (cssSource) {
-        this.removeStyleArr.forEach((removeStyle) => {
-            cssSource = cssSource.replace(removeStyle, '');
-        });
-
-        return cssSource;
     }
 };
 

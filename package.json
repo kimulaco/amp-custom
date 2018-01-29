@@ -20,8 +20,7 @@
     "node": ">=6.0.0"
   },
   "scripts": {
-    "test:module": "node test/module-test.js",
-    "test:method": "node test/method-test.js"
+    "test:optimize": "cd test && node optimize.js"
   },
   "dependencies": {
     "uglifycss": "0.0.27"
