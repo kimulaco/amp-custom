@@ -1,6 +1,6 @@
 {
   "name": "amp-custom",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "author": "kmrk",
   "license": "MIT",
   "description": "Optimize CSS source for AMP HTML.",
