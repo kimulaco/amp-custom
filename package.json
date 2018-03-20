@@ -1,6 +1,6 @@
 {
   "name": "amp-custom",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "kmrk",
   "license": "MIT",
   "description": "Optimize CSS source for AMP HTML.",
@@ -23,6 +23,6 @@
     "test:optimize": "cd test && node optimize.js"
   },
   "dependencies": {
-    "uglifycss": "0.0.27"
+    "uglifycss": "0.0.28"
   }
 }
