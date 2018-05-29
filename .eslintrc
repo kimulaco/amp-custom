@@ -29,7 +29,7 @@
   "rules": {
     "comma-dangle": [2,"never"],
     "no-cond-assign": [2,"always"],
-    "no-console": [1, {"allow": ["warn","error"]}],
+    "no-console": 0,
     "no-constant-condition": 2,
     "no-control-regex": 2,
     "no-debugger": 2,
@@ -111,7 +111,7 @@
     "yoda": 2,
     "strict": 0,
     "init-declarations": [2,"always"],
-    "no-catch-shadow": 2,
+    "no-catch-shadow": 0,
     "no-delete-var": 2,
     "no-label-var": 2,
     "no-shadow-restricted-names": 2,
@@ -197,6 +197,7 @@
     "max-params": 0,
     "max-statements": 0,
     "no-bitwise": 0,
-    "no-plusplus": 0
+    "no-plusplus": 0,
+    "implicit-arrow-linebreak": 0
   }
 }
