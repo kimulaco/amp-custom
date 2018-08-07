@@ -8,6 +8,7 @@ let AmpCustom = function (option) {
         /@import (.+?);/g,
         /@namespace (.+?);/g,
         /@viewport ([\s\S]*?)}/gm,
+        /@-ms-viewport ([\s\S]*?)}/gm,
         /@page ([\s\S]*?)}/gm,
         /@document(.+?)\{(?:[^{}]*\{[^{}]*\})*[^{}]*\}/gm,
         /@supports(.+?)\{(?:[^{}]*\{[^{}]*\})*[^{}]*\}/gm,
