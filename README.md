@@ -10,8 +10,11 @@ npm install --save amp-custom
 
 ## Use
 
+### API
+
 ```js
-const ampCustom = require('amp-custom');
+const AmpCustom = require('amp-custom');
+const ampCustom = new AmpCustom();
 let cssSource = `@charset "UTF-8";
 body {
   font-size: 16px;
@@ -38,6 +41,12 @@ a {
 }`;
 
 ampCustom.optimize(cssSource); // 'body{font-size:16px}a{color:#39c;text-decoration:none}'
+```
+
+### CLI
+
+```shell
+amp-custom input.css output.css
 ```
 
 ## Method
