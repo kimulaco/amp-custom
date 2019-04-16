@@ -1,5 +1,7 @@
 # amp-custom
 
+[![npm version](https://badge.fury.io/js/amp-custom.svg)](https://badge.fury.io/js/amp-custom)
+
 Optimize CSS source for AMP HTML.
 
 ## Install
