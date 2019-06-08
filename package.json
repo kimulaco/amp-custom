@@ -1,6 +1,6 @@
 {
   "name": "amp-custom",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "author": "kimulaco",
   "license": "MIT",
   "description": "Optimize CSS source for AMP HTML.",
@@ -26,9 +26,9 @@
     "test": "jest"
   },
   "dependencies": {
-    "clean-css": "^4.1.11"
+    "clean-css": "^4.2.1"
   },
   "devDependencies": {
-    "jest": "^23.0.1"
+    "jest": "^24.8.0"
   }
 }
