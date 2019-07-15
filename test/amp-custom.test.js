@@ -3,7 +3,7 @@ const path = require('path');
 const inputCss = fs.readFileSync(path.join(__dirname, './css/input.css')).toString();
 
 describe('amp-custom', () => {
-    const AmpCustom = require('amp-custom');
+    const AmpCustom = require('../amp-custom');
     const ampCustom = new AmpCustom();
     let output = '';
 
