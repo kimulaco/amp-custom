@@ -102,4 +102,4 @@ ampCustom.isOverMaxByte(cssSource); // false
 
 ## License
 
-[MIT License](https://github.com/kimulaco/amp-custom/blob/master/LICENSE).
+[MIT License](LICENSE).
