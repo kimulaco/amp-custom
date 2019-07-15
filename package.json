@@ -26,7 +26,8 @@
     "test": "jest"
   },
   "dependencies": {
-    "clean-css": "^4.2.1"
+    "clean-css": "^4.2.1",
+    "commander": "^2.20.0"
   },
   "devDependencies": {
     "jest": "^24.8.0"
