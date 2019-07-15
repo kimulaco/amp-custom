@@ -5,7 +5,7 @@ const inputCss = fs.readFileSync(path.join(__dirname, './css/input.css')).toStri
 describe('amp-custom', () => {
   const AmpCustom = require('../amp-custom')
   const ampCustom = new AmpCustom()
-  let output = ''
+  let output = null
 
   test('.optimize(cssSource)', () => {
     output = ampCustom.optimize(inputCss)

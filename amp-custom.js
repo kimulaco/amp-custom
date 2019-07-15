@@ -5,9 +5,9 @@ class AmpCustom {
     this.MAX_BYTE = 50000
     this.encode = 'utf-8'
     this.removeStyles = [
-      /@charset (.+?)/g,
-      /@import (.+?)/g,
-      /@namespace (.+?)/g,
+      /@charset (.+?);/g,
+      /@import (.+?);/g,
+      /@namespace (.+?);/g,
       /@viewport ([\s\S]*?)}/gm,
       /@-ms-viewport ([\s\S]*?)}/gm,
       /@page ([\s\S]*?)}/gm,
@@ -15,9 +15,7 @@ class AmpCustom {
       /@supports(.+?)\{(?:[^{}]*\{[^{}]*\})*[^{}]*\}/gm,
       /!important/g
     ]
-    this.cleanCss = new CleanCSS(Object.assign({
-      compatibility: 'ie11'
-    }, option || {}))
+    this.cleanCss = new CleanCSS(option)
   }
 
   /**
