@@ -1,6 +1,8 @@
 # amp-custom
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![npm version](https://badge.fury.io/js/amp-custom.svg)](https://badge.fury.io/js/amp-custom)
+[![Coverage Status](https://coveralls.io/repos/github/kimulaco/amp-custom/badge.svg)](https://coveralls.io/github/kimulaco/amp-custom)
 
 Optimize CSS source for AMP HTML.
 
@@ -102,4 +104,4 @@ ampCustom.isOverMaxByte(cssSource); // false
 
 ## License
 
-[MIT License](https://github.com/kimulaco/amp-custom/blob/master/LICENSE).
+[MIT License](LICENSE).
