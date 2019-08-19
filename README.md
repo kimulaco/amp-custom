@@ -102,6 +102,11 @@ let cssSource = 'body{font-size:16px}a{color:#39c;text-decoration:none}';
 ampCustom.isOverMaxByte(cssSource); // false
 ```
 
+## Plugins
+
+- [gulp-amp-custom](https://github.com/kimulaco/gulp-amp-custom)
+- [postcss-amp-custom](https://github.com/kimulaco/postcss-amp-custom)
+
 ## License
 
 [MIT License](LICENSE).
