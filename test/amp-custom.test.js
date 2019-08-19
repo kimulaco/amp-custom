@@ -5,24 +5,36 @@ const inputCss = fs.readFileSync(path.join(__dirname, './css/input.css')).toStri
 describe('amp-custom', () => {
   const AmpCustom = require('../amp-custom')
   const ampCustom = new AmpCustom()
-  let output = null
+  let successOutput = null
 
-  test('.optimize(cssSource)', () => {
-    output = ampCustom.optimize(inputCss)
-
-    expect(typeof output).toBe('string')
+  test('.optimize(cssSource) is success', () => {
+    successOutput = ampCustom.optimize(inputCss)
+    expect(typeof successOutput).toBe('string')
   })
 
-  test('.getSize(cssSource)', () => {
-    const size = ampCustom.getSize(output)
+  test('.optimize(undefined) is fail', () => {
+    const failOutput = ampCustom.optimize()
+    expect(failOutput).toBeFalsy()
+  })
 
+  test('.getSize(cssSource) is success', () => {
+    const size = ampCustom.getSize(successOutput)
     expect(typeof size).toBe('number')
   })
 
-  test('.isOverMaxByte(cssSource)', () => {
-    const bool = ampCustom.isOverMaxByte(output)
+  test('.getSize(undefined) is fail', () => {
+    const size = ampCustom.getSize()
+    expect(size).toBeFalsy()
+  })
 
+  test('.isOverMaxByte(cssSource) is success', () => {
+    const bool = ampCustom.isOverMaxByte(successOutput)
     expect(bool).toBe(false)
+  })
+
+  test('.isOverMaxByte(undefined) is fail', () => {
+    const bool = ampCustom.isOverMaxByte()
+    expect(bool).toBeFalsy()
   })
 });
 
