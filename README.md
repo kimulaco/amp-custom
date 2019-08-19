@@ -6,59 +6,34 @@
 
 Optimize CSS source for AMP HTML.
 
-## Install
+## CLI
+
+Install package
 
 ```shell
-npm install --save amp-custom
+npm install -g amp-custom
 ```
 
-## Use
-
-### API
-
-```js
-const AmpCustom = require('amp-custom');
-const ampCustom = new AmpCustom();
-let cssSource = `@charset "UTF-8";
-body {
-  font-size: 16px;
-}
-@page hoge {
-  size: portrait;
-  margin: 15mm;
-}
-a {
-  color: #39c !important;
-  text-decoration: none;
-}
-@viewport {
-  min-width: 640px;
-  max-width: 800px;
-}
-@supports not (display: flex) {
-  .flexbox {
-    overflow: hidden;
-  }
-  .flexbox div {
-    float: left;
-  }
-}`;
-
-ampCustom.optimize(cssSource); // 'body{font-size:16px}a{color:#39c;text-decoration:none}'
-```
-
-### CLI
+Run amp-custom by CLI.
 
 ```shell
 amp-custom input.css output.css
 ```
 
-## Method
+## API
 
-### optimize(cssSource:string)
+Install package
+
+```shell
+npm install --save-dev amp-custom
+```
+
+Run amp-custom by API.
 
 ```js
-let cssSource = `@charset "UTF-8";
+const AmpCustom = require('amp-custom')
+const ampCustom = new AmpCustom()
+const cssSource = `@charset "UTF-8";
 body {
   font-size: 16px;
 }
@@ -81,25 +56,52 @@ a {
   .flexbox div {
     float: left;
   }
-}`;
+}`
 
-ampCustom.optimize(cssSource); // 'body{font-size:16px}a{color:#39c;text-decoration:none}'
+ampCustom.optimize(cssSource) // 'body{font-size:16px}a{color:#39c;text-decoration:none}'
 ```
 
-### getSize(cssSource:string);
+### optimize(cssSource: String): String
+
+Optimize CSS for AMP.
 
 ```js
-let cssSource = 'body{font-size:16px}a{color:#39c;text-decoration:none}';
+const cssSource = `@charset "UTF-8";
+body {
+  font-size: 16px;
+}
+@page hoge {
+  size: portrait;
+  margin: 15mm;
+}
+a {
+  color: #39c !important;
+  text-decoration: none;
+}
+@viewport {
+  min-width: 640px;
+  max-width: 800px;
+}
+@supports not (display: flex) {
+  .flexbox {
+    overflow: hidden;
+  }
+  .flexbox div {
+    float: left;
+  }
+}`
 
-ampCustom.getSize(cssSource); // 54
+ampCustom.optimize(cssSource) // 'body{font-size:16px}a{color:#39c;text-decoration:none}'
 ```
 
-### isOverMaxByte(cssSource:string)
+### isOverMaxByte(cssSource: String): Boolean
+
+Check the CSS string size meets the AMP rules (50KB).
 
 ```js
-let cssSource = 'body{font-size:16px}a{color:#39c;text-decoration:none}';
+const cssSource = 'body{font-size:16px}a{color:#39c;text-decoration:none}'
 
-ampCustom.isOverMaxByte(cssSource); // false
+ampCustom.isOverMaxByte(cssSource) // false
 ```
 
 ## Plugins
