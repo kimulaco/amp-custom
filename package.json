@@ -24,7 +24,7 @@
   },
   "scripts": {
     "lint": "eslint **/*.js -c .eslintrc.js",
-    "test": "jest"
+    "test": "jest --silent"
   },
   "dependencies": {
     "clean-css": "^4.2.1",
