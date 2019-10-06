@@ -24,13 +24,14 @@
   },
   "scripts": {
     "lint": "eslint **/*.js -c .eslintrc.js",
-    "test": "jest --silent"
+    "test": "jest --silent --verbose"
   },
   "dependencies": {
     "clean-css": "^4.2.1",
     "commander": "^2.20.0"
   },
   "devDependencies": {
+    "del-cli": "^3.0.0",
     "eslint": "^6.5.1",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.18.2",

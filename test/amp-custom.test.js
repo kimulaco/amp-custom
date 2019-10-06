@@ -3,9 +3,13 @@ const path = require('path')
 const inputCss = fs.readFileSync(path.join(__dirname, './css/input.css')).toString()
 
 describe('amp-custom', () => {
-  const AmpCustom = require('../amp-custom')
-  const ampCustom = new AmpCustom()
+  let ampCustom = null
   let successOutput = null
+
+  beforeAll(() => {
+    const AmpCustom = require('../amp-custom')
+    ampCustom = new AmpCustom()
+  })
 
   test('.optimize(cssSource) is success', () => {
     successOutput = ampCustom.optimize(inputCss)
@@ -36,13 +40,4 @@ describe('amp-custom', () => {
     const bool = ampCustom.isOverMaxByte()
     expect(bool).toBeFalsy()
   })
-});
-
-(() => {
-  const AmpCustom = require('amp-custom')
-  const ampCustom = new AmpCustom()
-  const outputPath = path.join(__dirname, './css/output.css')
-  const outputCss = ampCustom.optimize(inputCss)
-
-  fs.writeFile(outputPath, outputCss)
-})()
+})
