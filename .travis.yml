@@ -5,10 +5,9 @@ dist: trusty
 
 before_script:
   - npm i
-  - npm i -D coveralls
 
 script:
   - npm run lint
-  - jest --coverage
+  - npm run test
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
   - rm -rf ./coverage

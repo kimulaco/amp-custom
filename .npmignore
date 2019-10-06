@@ -1,4 +1,4 @@
 .node-version
-npm-debug.log
+.log
 node_modules
-__test__
+coverage
