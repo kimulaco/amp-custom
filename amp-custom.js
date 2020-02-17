@@ -2,7 +2,7 @@ const CleanCSS = require('clean-css')
 
 class AmpCustom {
   constructor (option) {
-    this.MAX_BYTE = 50000
+    this.MAX_BYTE = 75000
     this.encode = 'utf-8'
     this.removeStyles = [
       /@charset (.+?);/g,
