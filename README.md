@@ -96,7 +96,7 @@ ampCustom.optimize(cssSource) // 'body{font-size:16px}a{color:#39c;text-decorati
 
 ### isOverMaxByte(cssSource: String): Boolean
 
-Check the CSS string size meets the AMP rules (50KB).
+Check the CSS string size meets the AMP rules (75KB).
 
 ```js
 const cssSource = 'body{font-size:16px}a{color:#39c;text-decoration:none}'
