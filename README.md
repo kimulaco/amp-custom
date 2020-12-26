@@ -2,27 +2,22 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![npm version](https://badge.fury.io/js/amp-custom.svg)](https://badge.fury.io/js/amp-custom)
+[![Build Status](https://github.com/kimulaco/amp-custom/workflows/Test/badge.svg)](https://github.com/kimulaco/amp-custom/actions)
 [![Coverage Status](https://coveralls.io/repos/github/kimulaco/amp-custom/badge.svg)](https://coveralls.io/github/kimulaco/amp-custom)
 
 Optimize CSS source for AMP HTML.
 
 ## CLI
 
-Install package
-
-```shell
-npm install -g amp-custom
-```
-
 Run amp-custom by CLI.
 
 ```shell
-amp-custom input.css output.css
+npx amp-custom input.css output.css
 ```
 
 ## API
 
-Install package
+Install package.
 
 ```shell
 npm install --save-dev amp-custom
